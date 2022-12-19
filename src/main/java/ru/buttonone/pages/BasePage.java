@@ -1,16 +1,16 @@
 package ru.buttonone.pages;
 
-import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage {
-    protected static ChromeDriver driver = new ChromeDriver();
+    protected WebDriver driver;
+
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     static {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-    }
-
-    public void quit(){
-        driver.quit();
     }
 }
